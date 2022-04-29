@@ -1,0 +1,24 @@
+{
+  "name": "state-design-ts",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "git@github.com:kheyenv/state-design-ts.git",
+  "author": "kenneth heyen <kenneth.heyen@voltacharging.com>",
+  "license": "MIT",
+  "dependencies": {
+    "dotenv": "^16.0.0",
+    "express": "^4.18.0"
+  },
+  "devDependencies": {
+    "@types/jest": "^26.0.0",
+    "@types/luxon": "^2.0.0",
+    "@types/node": "^13.13.5",
+    "eslint-plugin-tsc": "^2.0.0",
+    "husky": "^7.0.0",
+    "jest": "^26.0.0",
+    "lint-staged": "^11.0.0",
+    "timezone-mock": "^1.2.0",
+    "ts-jest": "^26.0.0",
+    "typescript": "^3.5.3"
+  }
+}

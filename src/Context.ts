@@ -1,26 +1,43 @@
 import InitState from './states/InitState'
 import State from './State'
 
-class Context {
-    private state: State
+export enum ContextStatus {
+    NOT_READY,
+    READY
+}
+
+export class Context {
+    private _state: State
+    private _status: ContextStatus = ContextStatus.NOT_READY
 
     constructor(state?: State) {
         if (state) {
-            this.next(state)
+            this.transitionTo(state)
         }
         else {
-            this.next(new InitState)
+            this.transitionTo(new InitState)
         }
+    }
+
+    public transitionTo(state: State) {
+        this._state = state
+        this._state.setContext(this)
+        this._status = ContextStatus.NOT_READY
+    }
+
+    public makeReady() {
+        this._status = ContextStatus.READY
+    }
+
+    public getStatus() {
+        return this._status
+    }
+
+    public getCurrentState() {
+        return this._state.name()
     }
 
     public handle(input: any) {
-
-    }
-
-    public next(state: State): void {
-        this.state = state
-        this.state.setContext(this)
+        this._state.SomeHandle(input)
     }
 }
-
-export default Context

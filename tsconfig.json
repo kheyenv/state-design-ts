@@ -1,0 +1,26 @@
+{
+  "compilerOptions": {
+    "outDir": "lib",
+    "target": "es6",
+    "lib": [
+      "es6",
+      "dom"
+    ],
+    "allowJs": true,
+    "checkJs": false,
+    "rootDir": "src",
+    "module": "commonjs",
+    "moduleResolution": "node",
+    "sourceMap": true,
+    "experimentalDecorators": true,
+    "pretty": true,
+    "noFallthroughCasesInSwitch": true,
+    "noImplicitAny": false,
+    "noImplicitReturns": true,
+    "forceConsistentCasingInFileNames": true,
+    "resolveJsonModule": true,
+  },
+  "include": [
+    "src/**/*"
+  ]
+}

@@ -1,11 +1,16 @@
+import { ContextStatus } from '../Context'
 import State from '../State'
 
+// to states
+import BarState from './BarState'
+
 class FooState extends State {
-    public SomeHandle(): void {
-        console.log('Foo state did \'SomeHandle()\'')
-    }
-    public AnotherHandle(): void {
-        console.log('Foo state did \'AnotherHandle()\'')
+    protected _name: string = 'Foo'
+
+    public SomeHandle(input: any): void {
+        if (this._context.getStatus() == ContextStatus.READY) {
+            this._context.transitionTo(new BarState)
+        }
     }
 }
 

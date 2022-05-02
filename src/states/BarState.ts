@@ -1,11 +1,10 @@
 import State from '../State'
 
 class BarState extends State {
-    public SomeHandle(): void {
-        console.log('Bar state did \'SomeHandle()\'')
-    }
-    public AnotherHandle(): void {
-        console.log('Bar state did \'AnotherHandle()\'')
+    protected _name: string = 'Bar'
+
+    public SomeHandle(input: any): void {
+        console.log(`Final state of ${this._name} reached!`)
     }
 }
 

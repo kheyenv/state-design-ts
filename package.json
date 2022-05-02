@@ -19,6 +19,13 @@
     "lint-staged": "^11.0.0",
     "timezone-mock": "^1.2.0",
     "ts-jest": "^26.0.0",
-    "typescript": "^3.5.3"
+    "typescript": "^3.5.3",
+    "ts-mockito": "^2.6.1"
+  },
+  "scripts": {
+    "build": "tsc",
+    "start": "node lib/index.js",
+    "test": "tsc && jest lib/.*.test.js",
+    "test-nobuild": "jest lib/.*.test.js"
   }
 }

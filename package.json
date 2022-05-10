@@ -24,8 +24,10 @@
   },
   "scripts": {
     "build": "tsc",
-    "start": "node lib/index.js",
+    "start": "tsc && node lib/index.js",
     "test": "tsc && jest lib/.*.test.js",
-    "test-nobuild": "jest lib/.*.test.js"
+    "test-nobuild": "jest lib/.*.test.js",
+    "clean": "rm -rf ./lib/",
+    "clean-all": "rm -rf ./lib/ ./node_modules/"
   }
 }

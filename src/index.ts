@@ -18,7 +18,7 @@ app.get('/', (req, res) => {
 // With some input, the current state does some work and may decide to transition given the current context
 app.get('/handle', (req, res) => {
     appContext.handle(req)
-    res.send(`Handled request: ${req} | Current state: ${appContext.getCurrentState()}`);
+    res.send(`Handled request... Current state: ${appContext.getCurrentState()}`);
 })
 
 // A simple example of how the context could be made ready for states to decide to transition

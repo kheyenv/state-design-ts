@@ -2,6 +2,7 @@ import { Context } from './Context'
 import * as express from 'express';
 import * as dotenv from 'dotenv';
 import * as fs from 'fs'
+import InitState from './states/InitState';
 
 const env = dotenv.parse(fs.readFileSync(__dirname + `/../environments/${process.env.NODE_ENV}.env`));
 const app = express();
@@ -25,6 +26,11 @@ app.get('/handle', (req, res) => {
 app.get('/ready', (req, res) => {
     appContext.makeReady()
     res.send(`${appContext.getCurrentState()} ready to transition!`)
+})
+
+app.get('/reset', (req, res) => {
+    appContext.reset()
+    res.send(`Reset back to starting state... Current state: ${appContext.getCurrentState()}`);
 })
 
 app.listen(env.PORT, () => {

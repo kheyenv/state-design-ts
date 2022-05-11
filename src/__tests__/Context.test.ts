@@ -14,4 +14,13 @@ describe('Context', () => {
         context.makeReady()
         expect(context.getStatus()).toEqual(ContextStatus.READY)
     })
+    it('reset', () => {
+        const context = new Context
+        expect(context.getCurrentState()).toEqual('Init')
+        context.makeReady()
+        context.handle(null)
+        expect(context.getCurrentState()).not.toEqual('Init')
+        context.reset()
+        expect(context.getCurrentState()).toEqual('Init')
+    })
 })

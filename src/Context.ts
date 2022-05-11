@@ -40,4 +40,9 @@ export class Context {
     public handle(input: any) {
         this._state.SomeHandle(input)
     }
+
+    public reset() {
+        this.transitionTo(new InitState)
+        this._status = ContextStatus.NOT_READY
+    }
 }
